@@ -3,3 +3,4 @@ import turtle as trtl
 
 wn = trtl.Screen()
 wn.bgpic("map.png")
+knbsjkd,bhaijsd
