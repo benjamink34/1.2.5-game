@@ -1,5 +1,55 @@
 #import the tutle
 import turtle as trtl
 
+click_shape = "circle.gif"
+
 wn = trtl.Screen()
-wn.bgpic("map.png")
+wn.setup(width=1.0, height=1.0)
+wn.addshape(click_shape)
+score = 0
+
+wn.bgpic("map.gif")
+wn.tracer(False)
+
+keys = ["g","h"]
+
+trtl.goto(200,200)
+
+def click(key):
+    wn.tracer(True)
+    index = keys(key)
+    trtl.goto(100,100)
+    score = score+1
+    trtl.goto(200,200)
+    wn.tracer(False)
+
+def draw_circle():
+    trtl.shape(click_shape)
+    trtl.showturtle()
+    wn.update()
+
+
+def check_g():
+  if ("g" in keys):
+    click("g")
+
+def check_h():
+  if ("h" in keys):
+    click("h")
+
+wn.onkeypress(check_g, "g")
+
+wn.onkeypress(check_h, "h")
+
+wn.listen()
+
+
+
+
+
+
+
+
+
+
+trtl.mainloop()
